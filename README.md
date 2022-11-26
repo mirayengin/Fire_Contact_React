@@ -1,6 +1,6 @@
 # Contact App
 
-### Check The Live Website ➡️ [Live Website](https://sekunev-contact-app.netlify.app/)
+### Check The Live Website ➡️ [Live Website](https://fire-contact-react.vercel.app/)
 
 ### Description
 
