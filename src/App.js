@@ -1,13 +1,22 @@
-import React from "react";
+import { useState } from "react";
 import "./App.css";
-import Home from "./component/Home";
+import Contacts from "./components/contacts/Contacts";
+import FormComponent from "./components/form/FormComponent";
 
-const App = () => {
+function App() {
+  const [editinfo, setEditinfo] = useState("")
+  const [editStatus, setEditStatus] = useState(false)
+
+console.log('editinfo :>> ', editinfo);
+console.log('editStatus :>> ', editStatus);
+
+
   return (
-    <div className="App h-screen ">
-      <Home />
+    <div className="App">
+      <FormComponent editStatus={editStatus} setEditStatus={setEditStatus} editinfo={editinfo} />
+      <Contacts setEditinfo={setEditinfo} setEditStatus={setEditStatus} />
     </div>
   );
-};
+}
 
 export default App;
