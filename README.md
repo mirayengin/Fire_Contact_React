@@ -27,10 +27,10 @@ SOLUTION
 │    │       |     └── Contacts.js
 │    │       └── firebase
 │    │             └── Firebase.js
-│    ├── utils
-│    │       ├── customToastify.js
-│    │       ├── functions.js
-│    │       └── firebase.js
+│    ├── toastify
+│    │       ├── ToasNotify.js
+│    │   
+│    │     
 │    ├── App.js
 │    ├── App.css
 │    ├── index.js
@@ -42,7 +42,7 @@ SOLUTION
 
 ### Used in this project
 
-👉 I mastered ReactJS, firebase-database, material UI, Material UI Icons, firabase features in this project. You can see the visual representation of the website above.
+👉 I mastered ReactJS, firebase-database, material UI, Material UI Icons, firabase, React-toastify features in this project. You can see the visual representation of the website above.
 
 # Getting Started with Create React App
 

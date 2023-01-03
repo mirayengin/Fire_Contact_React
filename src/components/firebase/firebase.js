@@ -2,7 +2,7 @@
 import { initializeApp } from "firebase/app";
 import {doc, collection, addDoc ,deleteDoc , getFirestore, onSnapshot, updateDoc } from "firebase/firestore"; 
 import { useEffect } from "react";
-import { toastErrorNotify, toastSuccessNotify } from "../../toastffy/ToastNotify";
+import { toastErrorNotify, toastSuccessNotify } from "../../toastify/ToastNotify";
 
 
 const firebaseConfig = {
