@@ -14,7 +14,7 @@ import {
 import { AccountCircle } from "@mui/icons-material";
 import PhoneEnabledIcon from "@mui/icons-material/PhoneEnabled";
 import { addContact, updateContact } from "../firebase/firebase";
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
+// import LinkedInIcon from '@mui/icons-material/LinkedIn';
 
 const FormComponent = ({ editinfo, setEditStatus, editStatus }) => {
 
@@ -45,6 +45,7 @@ useEffect(() => {
   console.log(editStatus);
 
   console.log('useeffect çaalıştı :>> ');
+  // eslint-disable-next-line
 },[editStatus])
 
 

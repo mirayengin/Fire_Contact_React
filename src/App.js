@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./App.css";
 import Contacts from "./components/contacts/Contacts";
 import FormComponent from "./components/form/FormComponent";
+import { ToastContainer } from "react-toastify";
 
 function App() {
   const [editinfo, setEditinfo] = useState("")
@@ -15,6 +16,7 @@ console.log('editStatus :>> ', editStatus);
     <div className="App">
       <FormComponent editStatus={editStatus} setEditStatus={setEditStatus} editinfo={editinfo} />
       <Contacts setEditinfo={setEditinfo} setEditStatus={setEditStatus} />
+      <ToastContainer/>
     </div>
   );
 }

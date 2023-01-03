@@ -1,7 +1,8 @@
 
 import { initializeApp } from "firebase/app";
-import {doc, collection, addDoc ,deleteDoc , getFirestore, onSnapshot, getDoc, updateDoc } from "firebase/firestore"; 
+import {doc, collection, addDoc ,deleteDoc , getFirestore, onSnapshot, updateDoc } from "firebase/firestore"; 
 import { useEffect } from "react";
+import { toastErrorNotify, toastSuccessNotify } from "../../toastffy/ToastNotify";
 
 
 const firebaseConfig = {
@@ -28,8 +29,11 @@ try {
     gender: info.gender,
     userId: userId
   });
+  console.log(docRef)
+  toastSuccessNotify("Saved Successfully!");
 } catch (error) {
   console.log(error);
+  toastErrorNotify("Saved not Successfully!");
 }  
 };
 
@@ -38,14 +42,20 @@ try {
 //!Bütün database deki verileri okumak için
 
 export const useReadContact = (setContactList) => {
-  useEffect(() => {
-    onSnapshot(collection(db, "users"), (snapshot) => {
-      
-        setContactList(snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() })))
-      
-    });
-   
-  }, []);
+  try {
+    useEffect(() => {
+      onSnapshot(collection(db, "users"), (snapshot) => {
+        
+          setContactList(snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() })))
+        
+      });
+  
+      // eslint-disable-next-line   
+    }, []);
+    toastSuccessNotify("Data Read Successfully!");
+  } catch (error) {
+    toastErrorNotify("Data Read not Successfully!");
+  }
 };
 
 
@@ -71,12 +81,9 @@ export const updateContact = (info, ) => {
   try {
     const docRef = doc(db, "users", `${id}`);
     updateDoc(docRef, { username, phone, gender });
-    // toastSuccessNotify("Updated Successfully!");
+    toastSuccessNotify("Updated Successfully!");
   } catch (error) {
-    // toastWarnNotify(error.message);
-  } finally {
-    
-    // setEditStatus(false);
+    toastErrorNotify("Updated not Successfully!");
   }
 };
 
@@ -86,5 +93,10 @@ export const updateContact = (info, ) => {
 
 //! Data silmek
 export const deleteTask = async (id) => {
-  await deleteDoc(doc(db, "users", id ));
+  try {
+    await deleteDoc(doc(db, "users", id ));
+    toastSuccessNotify("Deleted Successfully!");
+  } catch (error) {
+    toastErrorNotify("Deleted not Successfully!");
+  }
 }
