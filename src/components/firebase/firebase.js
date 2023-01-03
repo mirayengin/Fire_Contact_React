@@ -52,9 +52,9 @@ export const useReadContact = (setContactList) => {
   
       // eslint-disable-next-line   
     }, []);
-    toastSuccessNotify("Data Read Successfully!");
+
   } catch (error) {
-    toastErrorNotify("Data Read not Successfully!");
+
   }
 };
 
